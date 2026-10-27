@@ -1,0 +1,271 @@
+# Configurație Pages CMS (https://app.pagescms.org)
+# Definește ce poate edita operatorul site-ului, cu etichete în limba română.
+
+media:
+  - name: fisiere
+    label: Documente (PDF, Word, Excel)
+    input: fisiere
+    output: /fisiere
+    extensions: [pdf, doc, docx, xls, xlsx, ppt, pptx, odt, ods, zip]
+  - name: poze
+    label: Fotografii
+    input: img
+    output: /img
+    extensions: [jpg, jpeg, png, webp, gif]
+
+content:
+  - name: anunturi
+    label: Anunțuri (prima pagină)
+    description: Pe prima pagină apar automat cele mai noi 8 anunțuri, ordonate după dată.
+    type: file
+    path: date/anunturi.json
+    format: json
+    fields:
+      - name: anunturi
+        label: Anunțuri
+        type: object
+        list: true
+        fields:
+          - name: titlu
+            label: Titlu
+            type: string
+            required: true
+          - name: data
+            label: Data
+            type: date
+            required: true
+            options:
+              format: yyyy-MM-dd
+          - name: data_afisata
+            label: Data afișată (opțional, ex. „19–23.10.2026”)
+            type: string
+          - name: tip
+            label: Tip
+            type: select
+            options:
+              values:
+                - name: document
+                  label: Document
+                - name: activitate
+                  label: Activitate
+                - name: anunt
+                  label: Anunț
+          - name: fisier
+            label: Fișier atașat (dacă e un document)
+            type: file
+            options:
+              media: fisiere
+          - name: link
+            label: Sau link (ex. /activitati.html sau o adresă web)
+            type: string
+
+  - name: activitati
+    label: Activități
+    description: Se afișează pe ani, de la cea mai nouă la cea mai veche. Ordinea din listă nu contează.
+    type: file
+    path: date/activitati.json
+    format: json
+    fields:
+      - name: activitati
+        label: Activități
+        type: object
+        list: true
+        fields:
+          - name: titlu
+            label: Titlu
+            type: string
+            required: true
+          - name: data
+            label: Data (pentru ordonare)
+            type: date
+            required: true
+            options:
+              format: yyyy-MM-dd
+          - name: perioada
+            label: Perioada afișată (opțional, ex. „19–23 octombrie”)
+            type: string
+          - name: descriere
+            label: Descriere scurtă
+            type: text
+          - name: poza
+            label: Fotografie (opțional)
+            type: image
+            options:
+              media: poze
+
+  - name: documente
+    label: Documente
+    description: Pagina Documente le grupează pe categorii și le ordonează după dată.
+    type: file
+    path: date/documente.json
+    format: json
+    fields:
+      - name: documente
+        label: Documente
+        type: object
+        list: true
+        fields:
+          - name: titlu
+            label: Titlu
+            type: string
+            required: true
+          - name: categorie
+            label: Categorie
+            type: select
+            required: true
+            options:
+              values:
+                - name: anunturi
+                  label: Anunțuri și angajări
+                - name: manageriale
+                  label: Documente manageriale
+                - name: evaluare
+                  label: Evaluarea Națională
+                - name: admitere
+                  label: Admitere și înscrieri
+                - name: achizitii
+                  label: Achiziții
+                - name: erasmus
+                  label: Erasmus+
+                - name: pnras
+                  label: PNRAS
+                - name: alte
+                  label: Alte documente
+          - name: data
+            label: Data (opțional)
+            type: date
+            options:
+              format: yyyy-MM-dd
+          - name: fisier
+            label: Fișier
+            type: file
+            options:
+              media: fisiere
+          - name: link
+            label: Sau link extern (pentru fișiere mai mari de 100 MB)
+            type: string
+
+  - name: proiecte
+    label: Proiecte
+    description: Proiectele apar în ordinea din listă (se pot muta prin tragere).
+    type: file
+    path: date/proiecte.json
+    format: json
+    fields:
+      - name: proiecte
+        label: Proiecte
+        type: object
+        list: true
+        fields:
+          - name: titlu
+            label: Titlu
+            type: string
+            required: true
+          - name: eticheta
+            label: Etichetă (ex. Erasmus+, PNRAS)
+            type: string
+          - name: perioada
+            label: Perioadă sau cod de proiect
+            type: string
+          - name: poza
+            label: Fotografie
+            type: image
+            options:
+              media: poze
+          - name: continut
+            label: Descriere
+            type: rich-text
+          - name: documente
+            label: Documente și linkuri
+            type: object
+            list: true
+            fields:
+              - name: text
+                label: Text afișat
+                type: string
+              - name: fisier
+                label: Fișier
+                type: file
+                options:
+                  media: fisiere
+              - name: link
+                label: Sau link
+                type: string
+
+  - name: despre
+    label: Pagina „Despre noi”
+    type: file
+    path: date/despre.json
+    format: json
+    fields:
+      - name: titlu
+        label: Titlu
+        type: string
+      - name: rezumat
+        label: Rezumat
+        type: text
+      - name: text
+        label: Text
+        type: rich-text
+      - name: poza
+        label: Fotografie
+        type: image
+        options:
+          media: poze
+      - name: misiune
+        label: Misiune
+        type: object
+        list: true
+        fields:
+          - name: titlu
+            label: Titlu
+            type: string
+          - name: text
+            label: Text
+            type: text
+
+  - name: scoala
+    label: Date generale și contact
+    type: file
+    path: date/scoala.json
+    format: json
+    fields:
+      - name: nume
+        label: Numele școlii
+        type: string
+      - name: localitate
+        label: Localitate
+        type: string
+      - name: titlu_principal
+        label: Titlul de pe prima pagină
+        type: string
+      - name: prezentare
+        label: Text de prezentare (prima pagină)
+        type: text
+      - name: motto
+        label: Motto
+        type: string
+      - name: poza_principala
+        label: Fotografia de pe prima pagină
+        type: image
+        options:
+          media: poze
+      - name: distinctii
+        label: Distincții (etichete sub titlu)
+        type: string
+        list: true
+      - name: telefon
+        label: Telefon
+        type: string
+      - name: email
+        label: E-mail
+        type: string
+      - name: adresa
+        label: Adresă
+        type: string
+      - name: facebook
+        label: Pagina de Facebook
+        type: string
+      - name: youtube
+        label: Canalul YouTube
+        type: string

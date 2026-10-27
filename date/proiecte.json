@@ -1,0 +1,55 @@
+{
+  "proiecte": [
+    {
+      "titlu": "Mobilități pentru elevi și profesori",
+      "eticheta": "Erasmus+",
+      "perioada": "Acreditare Erasmus+ 2021–2027",
+      "poza": "/img/erasmus23.webp",
+      "continut": "<p>Școala are acreditare Erasmus+ în domeniul educației școlare. Din 2023 până acum au avut loc mobilități în Turcia, Italia și Grecia:</p><ul><li><strong>Octombrie–noiembrie 2023</strong>: Turcia, mobilitate pentru profesori;</li><li><strong>Februarie 2026</strong>: Napoli, Italia, cursul „Planet Protectors”;</li><li><strong>Mai 2026</strong>: Leptokarya, Grecia, mobilitate pentru elevi.</li></ul><p><strong>Pasiune pentru mediu, respect pentru diversitate</strong> (2025-1-RO01-KA122-SCH-000329279). Elevii au fost găzduiți de Școala Platon din Leptokarya – Katerini. Timp de cinci zile au învățat despre protecția mediului și despre tradițiile grecești și le-au prezentat pe cele românești.</p><p><strong>Conectează-te digital! Fii cetățean responsabil!</strong> (2026-1-RO01-KA122-SCH-000447515). Proiect nou, cu prima mobilitate în Franța.</p>",
+      "documente": [
+        {
+          "text": "Apel selecție cadre didactice – Franța",
+          "fisier": "/fisiere/erasmus-apel-selectie-franta-2026.pdf",
+          "link": ""
+        },
+        {
+          "text": "Prezentare Erasmus+ (PPTX)",
+          "fisier": "",
+          "link": "https://a1b841b7-1ed4-4b94-beb9-df993387fd57.filesusr.com/ugd/8afebe_326755afe2194d14b81a297d73f12188.pptx"
+        }
+      ]
+    },
+    {
+      "titlu": "Reducerea abandonului școlar în cadrul Școlii Gimnaziale Boldu",
+      "eticheta": "PNRAS",
+      "perioada": "PNRR · 23.09.2022 – 2025",
+      "poza": "/img/tabara.webp",
+      "continut": "<p>Proiect finanțat prin Planul Național de Redresare și Reziliență, derulat pe trei ani începând cu 23 septembrie 2022.</p><ul><li>mentorat și îndrumare personalizată pentru elevi;</li><li>ateliere de dezvoltare personală și workshopuri tematice;</li><li>proiecte interdisciplinare și sprijin psihopedagogic;</li><li>table inteligente în clase și tabăra montană gratuită din august 2023;</li><li>workshopul de la Predeal pentru relația profesori–părinți–elevi.</li></ul>",
+      "documente": [
+        {
+          "text": "Broșura PNRAS",
+          "fisier": "/fisiere/pnras-brosura.pdf",
+          "link": ""
+        },
+        {
+          "text": "Afiș PNRAS",
+          "fisier": "/fisiere/pnras-afis.pdf",
+          "link": ""
+        },
+        {
+          "text": "Anunț achiziții 2023–2024",
+          "fisier": "/fisiere/pnras-anunt-achizitii-2023-2024.pdf",
+          "link": ""
+        }
+      ]
+    },
+    {
+      "titlu": "Alte proiecte",
+      "eticheta": "Comunitate",
+      "perioada": "",
+      "poza": "/img/catehetic.webp",
+      "continut": "<p><strong>„Familia – binecuvântare a lui Dumnezeu și școală a iubirii smerite și darnice”.</strong> Proiect catehetic derulat împreună cu Parohia Boldu (18.11.2025 – 16.04.2026).</p><p><strong>POE „Suntem romi și ne integrăm”.</strong> 17 elevi participă la activități remediale și nonformale care îi sprijină să rămână la școală.</p><p><strong>eTwinning „Let’s Sing in English”.</strong> Cântece, versuri și videoclipuri în limba engleză, cu parteneri din Turcia și Ucraina. Proiectul a primit European Quality Label.</p><p><strong>„Șezătoare – proverbe și cimilituri populare”.</strong> Proiect interjudețean cu școli din Buzău, Brăila, Ialomița și Prahova.</p><p><strong>„Antreprenorii viitorului”.</strong> Concursuri de idei de afaceri, târguri și vizite la firme și instituții.</p>",
+      "documente": []
+    }
+  ]
+}

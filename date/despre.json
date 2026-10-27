@@ -1,0 +1,24 @@
+{
+  "titlu": "O școală în inima comunei Boldu",
+  "rezumat": "Școala Gimnazială Boldu pregătește elevi din clasa pregătitoare până în clasa a VIII-a, într-o comună din nord-estul județului Buzău.",
+  "text": "<p>Comuna Boldu este situată la nord de cursul de apă care alimentează Lacul Balta Albă și este traversată de drumul național DN22, care leagă Râmnicu Sărat de Brăila. Are un singur sat, cu 1.970 de locuitori la recensământul din 2021, atestat documentar din secolul al XVII-lea.</p><p>În comună se află biserica ortodoxă ridicată în 1836 de Ioan și Maria Bălăceanu și „Casa Dumitru Pâslaru” (1900), monument istoric și exemplu de arhitectură tradițională rurală.</p><p>Școala colaborează strâns cu Parohia Boldu, cu familiile elevilor și cu școli partenere din țară și din Europa.</p>",
+  "poza": "/img/sezatoare.webp",
+  "misiune": [
+    {
+      "titlu": "Cultură și lectură",
+      "text": "Să cultivăm dragostea pentru lectură, cultură și artă, prin biblioteca școlii, proiecte și evenimente culturale."
+    },
+    {
+      "titlu": "Valori civice",
+      "text": "Să promovăm valorile democratice, civice și morale, prin implicarea elevilor în viața școlii și a comunității."
+    },
+    {
+      "titlu": "Oameni autonomi",
+      "text": "Să formăm personalități creative, responsabile și solidare, care respectă diversitatea și contribuie la binele comun."
+    },
+    {
+      "titlu": "Sănătate și sport",
+      "text": "Să sprijinim dezvoltarea fizică și emoțională a elevilor, într-un mediu sigur, cu consiliere și un stil de viață activ."
+    }
+  ]
+}

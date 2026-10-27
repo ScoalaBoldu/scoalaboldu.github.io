@@ -1,0 +1,68 @@
+{
+  "anunturi": [
+    {
+      "titlu": "Săptămâna Verde",
+      "data": "2026-10-19",
+      "data_afisata": "19–23.10.2026",
+      "tip": "activitate",
+      "fisier": "",
+      "link": "/activitati.html"
+    },
+    {
+      "titlu": "Tichete sociale pe suport electronic",
+      "data": "2026-09-29",
+      "data_afisata": "",
+      "tip": "document",
+      "fisier": "/fisiere/tichete-sociale-2026.pdf",
+      "link": ""
+    },
+    {
+      "titlu": "European School Sport Day",
+      "data": "2026-09-29",
+      "data_afisata": "",
+      "tip": "activitate",
+      "fisier": "",
+      "link": "/activitati.html"
+    },
+    {
+      "titlu": "Proiect de Dezvoltare Instituțională (PDI) 2023–2027",
+      "data": "2026-08-04",
+      "data_afisata": "",
+      "tip": "document",
+      "fisier": "/fisiere/pdi-2023-2027.pdf",
+      "link": ""
+    },
+    {
+      "titlu": "Evaluare Națională 2026 – repartizare săli",
+      "data": "2026-06-18",
+      "data_afisata": "",
+      "tip": "document",
+      "fisier": "/fisiere/en-2026-repartizare-sali.pdf",
+      "link": ""
+    },
+    {
+      "titlu": "Serbarea de sfârșit de an",
+      "data": "2026-06-18",
+      "data_afisata": "",
+      "tip": "activitate",
+      "fisier": "",
+      "link": "/activitati.html"
+    },
+    {
+      "titlu": "Mobilitate Erasmus+ în Grecia",
+      "data": "2026-05-25",
+      "data_afisata": "mai 2026",
+      "tip": "activitate",
+      "fisier": "",
+      "link": "/proiecte.html"
+    },
+    {
+      "titlu": "Anunț angajare secretar",
+      "data": "2026-05-12",
+      "data_afisata": "",
+      "tip": "document",
+      "fisier": "/fisiere/anunt-angajare-secretar-2026.pdf",
+      "link": ""
+    }
+  ]
+}
