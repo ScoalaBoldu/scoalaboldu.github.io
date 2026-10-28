@@ -1,0 +1,71 @@
+/* Adaptări pentru Școala Gimnazială Boldu */
+.navbar-brand img { height: 52px; width: auto; }
+
+/* banda cu motiv de ie */
+.ie-band {
+  height: 12px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='12'%3E%3Cpath d='M7 1 L12 6 L7 11 L2 6 Z' fill='%23b0252d'/%3E%3Cpath d='M21 3.5 L23.5 6 L21 8.5 L18.5 6 Z' fill='%2312305f'/%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  background-color: #fff;
+}
+
+.hero-section { background-position: center; }
+.hero-slider-item h1 { text-shadow: 0 2px 12px rgba(0,0,0,.35); }
+.hero-section.overlay::before { opacity: .55; }
+.page-title-section.overlay::before { opacity: .78; }
+.page-title-section { background-size: cover; background-position: center; }
+
+.motto { font-family: $secondary-font; font-style: italic; border-left: 3px solid $primary-color; padding-left: 14px; color: $text-color-dark; }
+
+/* avizier pe prima pagină */
+.notice-mini li { display: flex; gap: 16px; align-items: center; padding: 14px 0; border-bottom: 1px solid $border-color; }
+.notice-mini .d { flex: 0 0 64px; text-align: center; background: $primary-color; color: #fff; padding: 8px 4px; line-height: 1.1; }
+.notice-mini .d b { display: block; font-size: 22px; }
+.notice-mini .d small { font-size: 11px; text-transform: uppercase; }
+.notice-mini a { font-weight: 600; color: $text-color-dark; }
+.notice-mini a:hover { color: $primary-color; }
+
+/* galerie foto */
+.galerie { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
+.galerie a { display: block; overflow: hidden; }
+.galerie img { width: 100%; aspect-ratio: 4/3; object-fit: cover; transition: transform .3s; }
+.galerie a:hover img { transform: scale(1.04); }
+
+/* documente */
+.doc-group { margin-bottom: 40px; }
+.doc-list li { display: flex; justify-content: space-between; gap: 16px; align-items: center; padding: 12px 0; border-bottom: 1px solid $border-color; }
+.doc-list a { font-weight: 600; color: $text-color-dark; }
+.doc-list a:hover { color: $primary-color; }
+.doc-list .meta { flex-shrink: 0; font-size: 13px; color: $text-color-light; }
+.tag { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .05em; padding: 2px 8px; border: 1px solid currentColor; margin-left: 8px; }
+.tag.pdf { color: $primary-color; } .tag.doc { color: $secondary-color; }
+#cauta { max-width: 420px; }
+
+/* contact */
+.contact-card { background: #fff; padding: 28px; height: 100%; border-top: 3px solid $primary-color; }
+.contact-card i { font-size: 30px; color: $primary-color; }
+.map-frame { width: 100%; height: 420px; border: 0; display: block; }
+
+/* misiune */
+.mission-box { background: #fff; padding: 26px; height: 100%; border-top: 3px solid $secondary-color; }
+
+.card-img-top { aspect-ratio: 16/10; object-fit: cover; }
+.content img { max-width: 100%; height: auto; }
+.badges img { max-height: 70px; width: auto; margin: 0 16px 16px 0; }
+
+.card-placeholder { display: flex; flex-direction: column; justify-content: center; align-items: center; aspect-ratio: 16/10; color: #fff; text-decoration: none;
+  background: $secondary-color url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56'%3E%3Cpath d='M28 6 L50 28 L28 50 L6 28 Z' fill='none' stroke='%23ffffff' stroke-opacity='.12' stroke-width='2'/%3E%3C/svg%3E");
+  span { font-family: $secondary-font; text-transform: uppercase; letter-spacing: .15em; font-size: 14px; color: #fff; }
+  b { font-family: $secondary-font; font-size: 44px; color: #fff; line-height: 1.1; border-bottom: 3px solid $primary-color; }
+  &:hover { color: #fff; text-decoration: none; }
+}
+
+.btn { text-transform: none; }
+.footer { padding-top: 90px; a { text-transform: none; } }
+.copyright p { text-transform: none; }
+.galerie img { height: auto; }
+.content h2 { font-size: 28px; margin-top: 32px; }
+.content h3 { font-size: 22px; margin-top: 24px; }
+.content table { width: 100%; margin-bottom: 20px; }
+.content table td, .content table th { border: 1px solid $border-color; padding: 8px 12px; }
+.content blockquote { border-left: 3px solid $primary-color; padding-left: 16px; font-style: italic; }

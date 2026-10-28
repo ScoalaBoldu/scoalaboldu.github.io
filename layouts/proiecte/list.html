@@ -1,0 +1,12 @@
+{{ define "main" }}
+<section class="section">
+  <div class="container">
+    {{ with .Content }}<div class="content mb-5">{{ . }}</div>{{ end }}
+    <div class="row">
+      {{ range .Pages.ByWeight }}
+      <div class="col-lg-4 col-sm-6 mb-5">{{ partial "course-card.html" . }}</div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

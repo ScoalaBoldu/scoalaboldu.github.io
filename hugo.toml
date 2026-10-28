@@ -1,0 +1,129 @@
+baseURL = "https://scoalaboldu.github.io/"
+title = "Școala Gimnazială Boldu"
+theme = "educenter"
+locale = "ro-RO"
+defaultContentLanguage = "ro"
+enableEmoji = false
+summaryLength = 25
+timeZone = "Europe/Bucharest"
+
+[pagination]
+pagerSize = 9
+
+[taxonomies]
+categorie = "categorii"
+
+[languages.ro]
+label = "Ro"
+locale = "ro-RO"
+weight = 1
+[languages.ro.params]
+home = "Acasă"
+copyright = "© Școala Gimnazială Boldu, comuna Boldu, județul Buzău"
+
+[module]
+[module.hugoVersion]
+extended = true
+min = "0.160.0"
+[[module.imports]]
+path = "github.com/gethugothemes/hugo-modules/images"
+
+[markup.goldmark.renderer]
+unsafe = true
+
+[imaging]
+resampleFilter = "lanczos"
+[imaging.jpeg]
+quality = 82
+[imaging.webp]
+quality = 80
+
+[outputs]
+home = ["HTML", "RSS"]
+
+[params]
+logo = "images/logo.svg"
+description = "Școala Gimnazială Boldu, județul Buzău: anunțuri, activități, proiecte Erasmus+ și documente publice."
+author = "Școala Gimnazială Boldu"
+address = "Strada Principală, com. Boldu, jud. Buzău"
+mobile = "0338 406 811"
+email = "sc_boldu@yahoo.com"
+top_header = true
+map_query = "Școala Gimnazială Boldu, Buzău"
+
+[[params.plugins.css]]
+link = "plugins/bootstrap/bootstrap.min.css"
+[[params.plugins.css]]
+link = "plugins/slick/slick.css"
+[[params.plugins.css]]
+link = "plugins/animate/animate.css"
+[[params.plugins.css]]
+link = "plugins/venobox/venobox.css"
+[[params.plugins.css]]
+link = "plugins/themify-icons/themify-icons.css"
+
+[[params.plugins.js]]
+link = "plugins/jQuery/jquery.min.js"
+[[params.plugins.js]]
+link = "plugins/bootstrap/bootstrap.min.js"
+[[params.plugins.js]]
+link = "plugins/slick/slick.min.js"
+[[params.plugins.js]]
+link = "plugins/venobox/venobox.min.js"
+
+[params.preloader]
+enable = false
+
+[params.subscription]
+enable = false
+
+[params.cookies]
+enable = false
+
+[[params.social]]
+title = "Facebook"
+icon = "ti-facebook"
+link = "https://www.facebook.com/ScoalaBoldu"
+[[params.social]]
+title = "YouTube"
+icon = "ti-youtube"
+link = "https://www.youtube.com/@secondaryschoolboldu5478"
+
+[menu]
+[[menu.main]]
+name = "Despre noi"
+url = "despre/"
+weight = 1
+[[menu.main]]
+name = "Avizier"
+url = "avizier/"
+weight = 2
+[[menu.main]]
+name = "Activități"
+url = "activitati/"
+weight = 3
+[[menu.main]]
+name = "Proiecte"
+url = "proiecte/"
+weight = 4
+[[menu.main]]
+name = "Documente"
+url = "documente/"
+weight = 5
+[[menu.main]]
+name = "Contact"
+url = "contact/"
+weight = 6
+
+[[menu.footer]]
+name = "Avizier"
+url = "avizier/"
+[[menu.footer]]
+name = "Documente"
+url = "documente/"
+[[menu.footer]]
+name = "Evaluarea Națională"
+url = "documente/#evaluare"
+[[menu.footer]]
+name = "Facebook"
+url = "https://www.facebook.com/ScoalaBoldu"

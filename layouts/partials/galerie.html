@@ -1,0 +1,10 @@
+{{ with .Params.galerie }}
+<div class="galerie mt-4 mb-5">
+  {{ range . }}
+  {{ with resources.Get . }}
+  {{ $big := .Resize "1400x webp q80" }}{{ $th := .Fill "480x360 webp q72 Center" }}
+  <a class="venobox" data-gall="galerie" href="{{ $big.RelPermalink }}"><img src="{{ $th.RelPermalink }}" alt="Fotografie" loading="lazy" width="480" height="360"></a>
+  {{ end }}
+  {{ end }}
+</div>
+{{ end }}

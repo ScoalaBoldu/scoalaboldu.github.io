@@ -1,0 +1,10 @@
+{{ define "main" }}
+<section class="section">
+  <div class="container">
+    {{ with .Content }}<div class="content mb-5">{{ . }}</div>{{ end }}
+    <ul class="list-unstyled">
+      {{ range .Pages.ByDate.Reverse }}{{ partial "notice-card.html" . }}{{ end }}
+    </ul>
+  </div>
+</section>
+{{ end }}

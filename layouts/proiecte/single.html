@@ -1,0 +1,35 @@
+{{ define "main" }}
+<section class="section-sm">
+  <div class="container">
+    {{ with resources.Get .Params.image }}{{ $i := .Fill "1110x460 webp q80 Center" }}<img class="img-fluid w-100 mb-4" src="{{ $i.RelPermalink }}" alt="{{ $.Title }}" width="1110" height="460">{{ end }}
+    <div class="row align-items-center mb-4">
+      <div class="col-lg-8"><h2>{{ .Title }}</h2></div>
+      <div class="col-lg-4">
+        <ul class="list-inline text-lg-right mb-0">
+          {{ with .Params.eticheta }}<li class="list-inline-item mr-4"><i class="ti-bookmark-alt text-primary mr-1"></i>{{ . }}</li>{{ end }}
+          {{ with .Params.perioada }}<li class="list-inline-item"><i class="ti-calendar text-primary mr-1"></i>{{ . }}</li>{{ end }}
+        </ul>
+      </div>
+      <div class="col-12 mt-3"><div class="border-bottom border-primary"></div></div>
+    </div>
+    <div class="content">{{ .Content }}</div>
+    {{ with .Params.documente }}
+    <h4 class="mt-5 mb-3">Documente</h4>
+    <ul class="list-unstyled doc-list">
+      {{ range . }}{{ $u := .fisier | default .link }}<li><a href="{{ strings.TrimPrefix "/" $u | relURL }}" target="_blank" rel="noopener">{{ .text }}</a><span class="meta"><span class="tag pdf">{{ upper (strings.TrimPrefix "." (path.Ext $u)) | default "LINK" }}</span></span></li>{{ end }}
+    </ul>
+    {{ end }}
+    {{ partial "galerie.html" . }}
+  </div>
+</section>
+<section class="section pt-0">
+  <div class="container">
+    <h2 class="section-title">{{ i18n "related_course" }}</h2>
+    <div class="row">
+      {{ range first 3 (where (where site.RegularPages "Section" "proiecte") "Permalink" "!=" .Permalink) }}
+      <div class="col-lg-4 col-sm-6 mb-5">{{ partial "course-card.html" . }}</div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

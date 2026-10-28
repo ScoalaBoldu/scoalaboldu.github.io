@@ -1,0 +1,397 @@
+# Configurație Pages CMS (https://app.pagescms.org) pentru site-ul Școlii Gimnaziale Boldu (Hugo + tema Educenter)
+
+media:
+  - name: poze
+    label: Fotografii
+    input: assets/images/foto
+    output: images/foto
+    extensions: [jpg, jpeg, png, webp]
+  - name: fisiere
+    label: Documente (PDF, Word, Excel)
+    input: static/fisiere
+    output: /fisiere
+    extensions: [pdf, doc, docx, xls, xlsx, ppt, pptx, odt, ods, zip]
+
+content:
+  - name: avizier
+    label: Avizier (anunțuri)
+    type: collection
+    path: content/avizier
+    format: yaml-frontmatter
+    exclude: [_index.md]
+    filename: "{year}-{month}-{day}-{primary}.md"
+    view:
+      primary: title
+      fields: [title, date]
+      sort: [date]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - name: title
+        label: Titlu
+        type: string
+        required: true
+      - name: date
+        label: Data
+        type: date
+        required: true
+        options:
+          format: yyyy-MM-dd
+      - name: fisier
+        label: Document atașat (PDF)
+        type: file
+        options:
+          media: fisiere
+      - name: link
+        label: Sau link către altă pagină (opțional)
+        type: string
+      - name: body
+        label: Text
+        type: rich-text
+
+  - name: activitati
+    label: Activități
+    type: collection
+    path: content/activitati
+    format: yaml-frontmatter
+    exclude: [_index.md]
+    filename: "{year}-{month}-{primary}.md"
+    view:
+      primary: title
+      fields: [title, date]
+      sort: [date]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - name: title
+        label: Titlu
+        type: string
+        required: true
+      - name: date
+        label: Data (pentru ordonare)
+        type: date
+        required: true
+        options:
+          format: yyyy-MM-dd
+      - name: perioada
+        label: Perioada afișată (ex. „19–23 octombrie 2026”)
+        type: string
+      - name: image
+        label: Fotografia principală
+        type: image
+        options:
+          media: poze
+      - name: galerie
+        label: Galerie foto (mai multe fotografii)
+        type: image
+        options:
+          media: poze
+          multiple: true
+      - name: body
+        label: Descriere
+        type: rich-text
+
+  - name: proiecte
+    label: Proiecte
+    type: collection
+    path: content/proiecte
+    format: yaml-frontmatter
+    exclude: [_index.md]
+    filename: "{primary}.md"
+    view:
+      primary: title
+      fields: [title, eticheta, weight]
+      sort: [weight]
+      default:
+        sort: weight
+        order: asc
+    fields:
+      - name: title
+        label: Titlu
+        type: string
+        required: true
+      - name: weight
+        label: Ordinea pe pagină (1 = primul)
+        type: number
+      - name: eticheta
+        label: Etichetă (ex. Erasmus+, PNRAS)
+        type: string
+      - name: perioada
+        label: Perioadă sau cod de proiect
+        type: string
+      - name: image
+        label: Fotografia principală
+        type: image
+        options:
+          media: poze
+      - name: galerie
+        label: Galerie foto
+        type: image
+        options:
+          media: poze
+          multiple: true
+      - name: documente
+        label: Documente și linkuri
+        type: object
+        list: true
+        fields:
+          - name: text
+            label: Text afișat
+            type: string
+          - name: fisier
+            label: Fișier
+            type: file
+            options:
+              media: fisiere
+          - name: link
+            label: Sau link
+            type: string
+      - name: body
+        label: Descriere
+        type: rich-text
+
+  - name: documente
+    label: Documente
+    type: file
+    path: data/documente.yml
+    format: yaml
+    fields:
+      - name: documente
+        label: Documente
+        type: object
+        list: true
+        fields:
+          - name: titlu
+            label: Titlu
+            type: string
+            required: true
+          - name: categorie
+            label: Categorie
+            type: select
+            required: true
+            options:
+              values:
+                - name: anunturi
+                  label: Anunțuri și angajări
+                - name: manageriale
+                  label: Documente manageriale
+                - name: evaluare
+                  label: Evaluarea Națională
+                - name: admitere
+                  label: Admitere și înscrieri
+                - name: achizitii
+                  label: Achiziții
+                - name: erasmus
+                  label: Erasmus+
+                - name: pnras
+                  label: PNRAS
+                - name: alte
+                  label: Alte documente
+          - name: data
+            label: Data (opțional)
+            type: date
+            options:
+              format: yyyy-MM-dd
+          - name: fisier
+            label: Fișier
+            type: file
+            options:
+              media: fisiere
+          - name: link
+            label: Sau link extern (pentru fișiere peste 100 MB)
+            type: string
+      - name: categorii
+        label: Categorii (nu se modifică de obicei)
+        type: object
+        list: true
+        fields:
+          - name: id
+            label: Cod
+            type: string
+          - name: nume
+            label: Nume afișat
+            type: string
+
+  - name: prima-pagina
+    label: Prima pagină
+    type: file
+    path: data/ro/homepage.yml
+    format: yaml
+    fields:
+      - name: slider
+        label: Imaginea mare de sus
+        type: object
+        fields:
+          - name: enable
+            label: Afișează
+            type: boolean
+          - name: imagine
+            label: Fotografie de fundal
+            type: image
+            options:
+              media: poze
+          - name: elemente
+            label: Mesaje (se derulează)
+            type: object
+            list: true
+            fields:
+              - name: titlu
+                label: Titlu
+                type: string
+              - name: text
+                label: Text
+                type: text
+              - name: buton
+                label: Buton
+                type: object
+                fields:
+                  - name: text
+                    label: Text buton
+                    type: string
+                  - name: link
+                    label: Link (ex. avizier/)
+                    type: string
+      - name: repere
+        label: Cele patru repere
+        type: object
+        fields:
+          - name: enable
+            label: Afișează
+            type: boolean
+          - name: imagine
+            label: Fotografie
+            type: image
+            options:
+              media: poze
+          - name: elemente
+            label: Repere
+            type: object
+            list: true
+            fields:
+              - name: titlu
+                label: Titlu
+                type: string
+              - name: icon
+                label: Iconiță (themify, ex. ti-blackboard)
+                type: string
+              - name: link
+                label: Link
+                type: string
+              - name: text
+                label: Text
+                type: text
+      - name: despre
+        label: Secțiunea „Despre”
+        type: object
+        fields:
+          - name: enable
+            label: Afișează
+            type: boolean
+          - name: titlu
+            label: Titlu
+            type: string
+          - name: imagine
+            label: Fotografie
+            type: image
+            options:
+              media: poze
+          - name: text
+            label: Text
+            type: text
+          - name: motto
+            label: Motto
+            type: string
+      - name: distinctii
+        label: Recunoaștere
+        type: object
+        fields:
+          - name: imagini
+            label: Sigle / distincții
+            type: image
+            options:
+              media: poze
+              multiple: true
+          - name: text
+            label: Text
+            type: text
+      - name: cta
+        label: Banda roșie (anunț important)
+        type: object
+        fields:
+          - name: enable
+            label: Afișează
+            type: boolean
+          - name: subtitlu
+            label: Subtitlu
+            type: string
+          - name: titlu
+            label: Titlu
+            type: string
+          - name: buton
+            label: Buton
+            type: object
+            fields:
+              - name: text
+                label: Text buton
+                type: string
+              - name: link
+                label: Link
+                type: string
+      - name: cifre
+        label: Școala în cifre
+        type: object
+        fields:
+          - name: enable
+            label: Afișează
+            type: boolean
+          - name: elemente
+            label: Cifre
+            type: object
+            list: true
+            fields:
+              - name: nume
+                label: Ce numărăm
+                type: string
+              - name: numar
+                label: Număr
+                type: number
+
+  - name: despre
+    label: Pagina „Despre noi”
+    type: file
+    path: content/despre/_index.md
+    format: yaml-frontmatter
+    fields:
+      - name: title
+        label: Titlu
+        type: string
+      - name: description
+        label: Rezumat (sub titlu)
+        type: text
+      - name: image
+        label: Fotografie
+        type: image
+        options:
+          media: poze
+      - name: misiune
+        label: Misiunea școlii
+        type: object
+        list: true
+        fields:
+          - name: titlu
+            label: Titlu
+            type: string
+          - name: text
+            label: Text
+            type: text
+      - name: galerie
+        label: Galerie foto
+        type: image
+        options:
+          media: poze
+          multiple: true
+      - name: body
+        label: Text
+        type: rich-text

@@ -1,0 +1,20 @@
+{{ $bg := resources.Get (.Params.bg_image | default "images/fundal-pagina.webp") }}
+{{ $url := "" }}{{ with $bg }}{{ $url = (.Resize "1600x webp q72").RelPermalink }}{{ end }}
+<section class="page-title-section overlay" style="background-image: url('{{ $url }}');">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-9">
+        <ul class="list-inline custom-breadcrumb">
+          <li class="list-inline-item h2"><a class="text-primary font-secondary" href="{{ site.Home.RelPermalink }}">{{ site.Params.home }}</a></li>
+          {{ if and .IsPage .Parent (not .Parent.IsHome) }}
+          <li class="list-inline-item h5"><i class="ti-angle-right text-white"></i></li>
+          <li class="list-inline-item h3"><a class="text-white font-secondary" href="{{ .Parent.RelPermalink }}">{{ .Parent.Title }}</a></li>
+          {{ end }}
+          <li class="list-inline-item h5"><i class="ti-angle-right text-white"></i></li>
+          <li class="list-inline-item text-white h3 font-secondary">{{ .Title }}</li>
+        </ul>
+        {{ with .Params.description }}<p class="text-lighten">{{ . | markdownify }}</p>{{ end }}
+      </div>
+    </div>
+  </div>
+</section>

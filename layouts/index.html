@@ -1,0 +1,138 @@
+{{ define "main" }}
+{{ $data := index hugo.Data site.Language.Lang }}
+{{ $h := $data.homepage }}
+
+{{ with $h.slider }}{{ if .enable }}
+{{ $bg := "" }}{{ with resources.Get .imagine }}{{ $bg = (.Resize "1920x webp q75").RelPermalink }}{{ end }}
+<section class="hero-section overlay bg-cover" style="background-image:url('{{ $bg }}')">
+  <div class="container">
+    <div class="hero-slider">
+      {{ range .elemente }}
+      <div class="hero-slider-item">
+        <div class="row"><div class="col-md-9">
+          <h1 class="text-white" data-animation-out="fadeOutRight" data-delay-out="5" data-duration-in=".3" data-animation-in="fadeInLeft" data-delay-in=".1">{{ .titlu }}</h1>
+          <p class="text-white mb-4" style="font-size:18px" data-animation-out="fadeOutRight" data-delay-out="5" data-duration-in=".3" data-animation-in="fadeInLeft" data-delay-in=".4">{{ .text }}</p>
+          {{ with .buton }}{{ if .text }}<a href="{{ .link | relLangURL }}" class="btn btn-primary" data-animation-out="fadeOutRight" data-delay-out="5" data-duration-in=".3" data-animation-in="fadeInLeft" data-delay-in=".7">{{ .text }}</a>{{ end }}{{ end }}
+        </div></div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}{{ end }}
+
+{{ with $h.repere }}{{ if .enable }}
+<section class="bg-gray overflow-md-hidden">
+  <div class="container-fluid p-0">
+    <div class="row no-gutters">
+      <div class="col-xl-4 col-lg-5 align-self-stretch">
+        {{ with resources.Get .imagine }}{{ $i := .Fill "700x620 webp q75 Center" }}<img class="img-fluid w-100 h-100" style="object-fit:cover" src="{{ $i.RelPermalink }}" alt="Elevi ai Școlii Gimnaziale Boldu" width="700" height="620">{{ end }}
+      </div>
+      <div class="col-xl-8 col-lg-7">
+        <div class="row feature-blocks bg-gray justify-content-between">
+          {{ range .elemente }}
+          <div class="col-sm-6 col-xl-5 mb-xl-5 mb-lg-3 mb-4 text-center text-sm-left">
+            <i class="{{ .icon }} mb-xl-4 mb-lg-3 mb-4 feature-icon"></i>
+            <h3 class="mb-xl-4 mb-lg-3 mb-4"><a class="text-dark" href="{{ .link | relLangURL }}">{{ .titlu }}</a></h3>
+            <p>{{ .text }}</p>
+          </div>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}{{ end }}
+
+{{ with $h.despre }}{{ if .enable }}
+<section class="section">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-6 order-2 order-md-1">
+        <h2 class="section-title">{{ .titlu }}</h2>
+        <p>{{ .text | markdownify }}</p>
+        {{ with .motto }}<p class="motto mb-4">{{ . }}</p>{{ end }}
+        <a href="{{ "despre/" | relLangURL }}" class="btn btn-outline-primary">Despre școală</a>
+      </div>
+      <div class="col-md-6 order-1 order-md-2 mb-4 mb-md-0">
+        {{ with resources.Get .imagine }}{{ $i := .Fill "800x560 webp q78 Center" }}<img class="img-fluid w-100" src="{{ $i.RelPermalink }}" alt="Școala Gimnazială Boldu" width="800" height="560">{{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}{{ end }}
+
+<section class="section-sm bg-gray">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-7 mb-5 mb-lg-0">
+        <div class="d-flex align-items-center section-title justify-content-between">
+          <h2 class="mb-0 text-nowrap mr-3">Avizier</h2>
+          <div class="border-top w-100 border-primary d-none d-sm-block"></div>
+          <a href="{{ "avizier/" | relLangURL }}" class="btn btn-sm btn-outline-primary ml-sm-3 text-nowrap">{{ i18n "see_all" }}</a>
+        </div>
+        <ul class="list-unstyled notice-mini">
+          {{ range first 5 (where site.RegularPages "Section" "avizier").ByDate.Reverse }}
+          <li><div class="d"><b>{{ .Date.Day }}</b><small>{{ time.Format "Jan 2006" .Date }}</small></div><div><a href="{{ .RelPermalink }}">{{ .Title }}</a></div></li>
+          {{ end }}
+        </ul>
+      </div>
+      <div class="col-lg-5">
+        <h2 class="section-title">Recunoaștere</h2>
+        <div class="badges">
+          {{ range $h.distinctii.imagini }}{{ with resources.Get . }}{{ $i := .Resize "x140 webp q85" }}<img src="{{ $i.RelPermalink }}" alt="Distincție" loading="lazy">{{ end }}{{ end }}
+        </div>
+        <p>{{ $h.distinctii.text }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-sm">
+  <div class="container">
+    <div class="d-flex align-items-center section-title justify-content-between">
+      <h2 class="mb-0 text-nowrap mr-3">Proiecte</h2>
+      <div class="border-top w-100 border-primary d-none d-sm-block"></div>
+      <a href="{{ "proiecte/" | relLangURL }}" class="btn btn-sm btn-outline-primary ml-sm-3 text-nowrap">{{ i18n "see_all" }}</a>
+    </div>
+    <div class="row justify-content-center">
+      {{ range first 3 (where site.RegularPages "Section" "proiecte").ByWeight }}
+      <div class="col-lg-4 col-sm-6 mb-5">{{ partial "course-card.html" . }}</div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+{{ with $h.cta }}{{ if .enable }}
+<section class="section bg-primary">
+  <div class="container"><div class="row"><div class="col-12 text-center">
+    <h6 class="text-white font-secondary mb-0">{{ .subtitlu }}</h6>
+    <h2 class="section-title text-white">{{ .titlu }}</h2>
+    {{ with .buton }}<a href="{{ .link | relLangURL }}" class="btn btn-light">{{ .text }}</a>{{ end }}
+  </div></div></div>
+</section>
+{{ end }}{{ end }}
+
+<section class="section">
+  <div class="container">
+    <div class="d-flex align-items-center section-title justify-content-between">
+      <h2 class="mb-0 text-nowrap mr-3">Activități recente</h2>
+      <div class="border-top w-100 border-primary d-none d-sm-block"></div>
+      <a href="{{ "activitati/" | relLangURL }}" class="btn btn-sm btn-outline-primary ml-sm-3 text-nowrap">{{ i18n "see_all" }}</a>
+    </div>
+    <div class="row justify-content-center">
+      {{ range first 3 (where site.RegularPages "Section" "activitati").ByDate.Reverse }}
+      <div class="col-lg-4 col-sm-6 mb-5 mb-lg-0">{{ partial "post-card.html" . }}</div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+{{ if $h.cifre.enable }}
+<section class="section-sm bg-secondary">
+  <div class="container"><div class="row">
+    {{ range $h.cifre.elemente }}<div class="col-md-3 col-sm-6 mb-4 mb-md-0 text-center"><h2 class="count text-white" data-count="{{ .numar }}">0</h2><h5 class="text-white">{{ .nume }}</h5></div>{{ end }}
+  </div></div>
+</section>
+{{ end }}
+{{ end }}

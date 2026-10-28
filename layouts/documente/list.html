@@ -1,0 +1,31 @@
+{{ define "main" }}
+{{ $docs := hugo.Data.documente.documente }}
+{{ $cats := hugo.Data.documente.categorii }}
+<section class="section">
+  <div class="container">
+    {{ with .Content }}<div class="content mb-4">{{ . }}</div>{{ end }}
+    <div class="mb-5"><label for="cauta" class="d-block mb-2">Caută un document</label>
+      <input id="cauta" type="search" class="form-control" placeholder="de exemplu: stat de funcții"></div>
+    {{ range $cats }}
+    {{ $c := .id }}{{ $items := where $docs "categorie" $c }}
+    {{ if $items }}
+    <div class="doc-group" id="{{ $c }}">
+      <h3 class="section-title h4">{{ .nume }}</h3>
+      <ul class="list-unstyled doc-list">
+        {{ range sort $items "data" "desc" }}
+        {{ $u := .fisier | default .link }}{{ $x := upper (strings.TrimPrefix "." (path.Ext $u)) }}
+        <li data-text="{{ lower .titlu }}"><a href="{{ strings.TrimPrefix "/" $u | relURL }}" target="_blank" rel="noopener">{{ .titlu }}</a>
+          <span class="meta">{{ with .data }}{{ partial "data.html" (time.AsTime .) }}{{ end }}<span class="tag {{ if eq $x "PDF" }}pdf{{ else }}doc{{ end }}">{{ $x | default "LINK" }}</span></span></li>
+        {{ end }}
+      </ul>
+    </div>
+    {{ end }}{{ end }}
+    <p id="nimic" class="d-none">Niciun document nu se potrivește căutării.</p>
+    <p class="mt-4">Linkuri utile: <a href="https://www.isjbuzau.ro/" target="_blank" rel="noopener">Inspectoratul Școlar Județean Buzău</a> · <a href="https://www.edu.ro/" target="_blank" rel="noopener">Ministerul Educației</a></p>
+  </div>
+</section>
+<script>
+(function(){var q=document.getElementById('cauta');var n=function(s){return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'')};
+q.addEventListener('input',function(){var v=n(q.value.trim()),any=false;document.querySelectorAll('.doc-group').forEach(function(g){var vis=0;g.querySelectorAll('li').forEach(function(li){var ok=!v||n(li.dataset.text).indexOf(v)>=0;li.style.display=ok?'':'none';if(ok)vis++});g.style.display=vis?'':'none';if(vis)any=true});document.getElementById('nimic').classList.toggle('d-none',any)});})();
+</script>
+{{ end }}

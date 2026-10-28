@@ -1,0 +1,109 @@
+# Lista documentelor publice. Se editează din Pages CMS → „Documente”.
+categorii:
+- id: anunturi
+  nume: Anunțuri și angajări
+- id: manageriale
+  nume: Documente manageriale
+- id: evaluare
+  nume: Evaluarea Națională
+- id: admitere
+  nume: Admitere și înscrieri
+- id: achizitii
+  nume: Achiziții
+- id: erasmus
+  nume: Erasmus+
+- id: pnras
+  nume: PNRAS
+- id: alte
+  nume: Alte documente
+documente:
+- titlu: Tichete sociale pe suport electronic
+  categorie: anunturi
+  data: '2026-09-29'
+  fisier: /fisiere/tichete-sociale-2026.pdf
+  link: ''
+- titlu: Anunț angajare secretar
+  categorie: anunturi
+  data: '2026-05-12'
+  fisier: /fisiere/anunt-angajare-secretar-2026.pdf
+  link: ''
+- titlu: Proiect de Dezvoltare Instituțională (PDI) 2023–2027
+  categorie: manageriale
+  data: '2026-08-04'
+  fisier: /fisiere/pdi-2023-2027.pdf
+  link: ''
+- titlu: Stat de funcții (1.10.2025)
+  categorie: manageriale
+  data: '2025-10-01'
+  fisier: /fisiere/stat-functii-2025.pdf
+  link: ''
+- titlu: Stat de funcții (anterior)
+  categorie: manageriale
+  data: ''
+  fisier: /fisiere/stat-functii-anterior.pdf
+  link: ''
+- titlu: EN 2026 – repartizare săli
+  categorie: evaluare
+  data: '2026-06-18'
+  fisier: /fisiere/en-2026-repartizare-sali.pdf
+  link: ''
+- titlu: EN 2025 – anunț vizualizare lucrări și depunere contestații
+  categorie: evaluare
+  data: ''
+  fisier: /fisiere/en-2025-anunt-contestatii.pdf
+  link: ''
+- titlu: EN 2025 – model cerere contestație
+  categorie: evaluare
+  data: ''
+  fisier: /fisiere/en-2025-cerere-contestatie.pdf
+  link: ''
+- titlu: EN 2025 – model cerere contestație (editabil)
+  categorie: evaluare
+  data: ''
+  fisier: /fisiere/en-2025-cerere-contestatie.docx
+  link: ''
+- titlu: EN 2025 – model cerere vizualizare lucrări
+  categorie: evaluare
+  data: ''
+  fisier: /fisiere/en-2025-cerere-vizualizare.docx
+  link: ''
+- titlu: Cerere de ofertă
+  categorie: achizitii
+  data: ''
+  fisier: /fisiere/cerere-oferta.pdf
+  link: ''
+- titlu: Cerere de ofertă – catering
+  categorie: achizitii
+  data: ''
+  fisier: /fisiere/cerere-oferta-catering.pdf
+  link: ''
+- titlu: Anunț achiziții PNRAS 2023–2024
+  categorie: achizitii
+  data: ''
+  fisier: /fisiere/pnras-anunt-achizitii-2023-2024.pdf
+  link: ''
+- titlu: Apel selecție cadre didactice – Fluxul 1, Franța (2026)
+  categorie: erasmus
+  data: ''
+  fisier: /fisiere/erasmus-apel-selectie-franta-2026.pdf
+  link: ''
+- titlu: Apel instituțional acreditare Erasmus+ 2023 (ISJ Buzău)
+  categorie: erasmus
+  data: ''
+  fisier: /fisiere/erasmus-apel-acreditare-2023.pdf
+  link: ''
+- titlu: Prezentarea proiectului Erasmus+ (PPTX, 125 MB)
+  categorie: erasmus
+  data: ''
+  fisier: ''
+  link: https://a1b841b7-1ed4-4b94-beb9-df993387fd57.filesusr.com/ugd/8afebe_326755afe2194d14b81a297d73f12188.pptx
+- titlu: Broșura PNRAS
+  categorie: pnras
+  data: ''
+  fisier: /fisiere/pnras-brosura.pdf
+  link: ''
+- titlu: Afiș PNRAS
+  categorie: pnras
+  data: ''
+  fisier: /fisiere/pnras-afis.pdf
+  link: ''

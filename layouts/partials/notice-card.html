@@ -1,0 +1,11 @@
+<li class="d-md-table mb-4 w-100 border-bottom hover-shadow">
+  <div class="d-md-table-cell text-center p-4 bg-primary text-white mb-4 mb-md-0" style="min-width:150px"><span class="h2 d-block text-white">{{ .Date.Day }}</span>{{ time.Format "January 2006" .Date }}</div>
+  <div class="d-md-table-cell px-4 vertical-align-middle mb-4 mb-md-0">
+    <a href="{{ .RelPermalink }}" class="h4 mb-3 d-block">{{ .Title }}</a>
+    <p class="mb-0">{{ .Summary | plainify | truncate 140 }}</p>
+  </div>
+  <div class="d-md-table-cell text-right pr-0 pr-md-4" style="white-space:nowrap">
+    {{ with .Params.fisier }}<a href="{{ strings.TrimPrefix "/" . | relURL }}" class="btn btn-outline-primary mb-2" target="_blank" rel="noopener">PDF</a>{{ end }}
+    <a href="{{ .RelPermalink }}" class="btn btn-primary mb-2">{{ i18n "details" }}</a>
+  </div>
+</li>

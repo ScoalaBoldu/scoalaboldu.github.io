@@ -1,0 +1,31 @@
+{{ define "main" }}
+{{ $data := index hugo.Data site.Language.Lang }}
+<section class="section">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-7 content mb-4">{{ .Content }}</div>
+      <div class="col-lg-5 mb-4">{{ with resources.Get .Params.image }}{{ $i := .Fill "800x600 webp q78 Center" }}<img class="img-fluid w-100" src="{{ $i.RelPermalink }}" alt="Școala Gimnazială Boldu" width="800" height="600">{{ end }}</div>
+    </div>
+  </div>
+</section>
+{{ with .Params.misiune }}
+<section class="section bg-gray">
+  <div class="container">
+    <h2 class="section-title">Misiunea școlii</h2>
+    <div class="row">
+      {{ range . }}<div class="col-md-6 col-lg-3 mb-4"><div class="mission-box"><h4 class="mb-3">{{ .titlu }}</h4><p class="mb-0">{{ .text }}</p></div></div>{{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+{{ if $data.homepage.cifre.enable }}
+<section class="section-sm bg-primary">
+  <div class="container"><div class="row">
+    {{ range $data.homepage.cifre.elemente }}<div class="col-md-3 col-sm-6 mb-4 mb-md-0 text-center"><h2 class="count text-white" data-count="{{ .numar }}">0</h2><h5 class="text-white">{{ .nume }}</h5></div>{{ end }}
+  </div></div>
+</section>
+{{ end }}
+{{ with .Params.galerie }}
+<section class="section"><div class="container"><h2 class="section-title">Școala noastră în imagini</h2>{{ partial "galerie.html" $ }}</div></section>
+{{ end }}
+{{ end }}

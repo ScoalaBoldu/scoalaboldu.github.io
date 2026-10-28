@@ -1,0 +1,21 @@
+<head>
+  <meta charset="utf-8">
+  <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} · {{ site.Title }}{{ end }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {{ $desc := .Params.description | default .Summary | default site.Params.description | plainify | truncate 160 }}
+  <meta name="description" content="{{ $desc }}">
+  <meta property="og:title" content="{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }}{{ end }}">
+  <meta property="og:description" content="{{ $desc }}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ .Permalink }}">
+  {{ $og := .Params.image | default "images/scoala.webp" }}
+  {{ with resources.Get $og }}{{ with .Resize "1200x webp q80" }}<meta property="og:image" content="{{ .Permalink }}">{{ end }}{{ end }}
+  <link rel="canonical" href="{{ .Permalink }}">
+  {{ hugo.Generator }}
+  {{ range site.Params.plugins.css }}
+  <link rel="stylesheet" href="{{ .link | relURL }}">
+  {{ end }}
+  {{ $styles := resources.Get "scss/main.scss" | toCSS (dict "outputStyle" "compressed") | fingerprint "sha512" }}
+  <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}" media="screen">
+  {{ with resources.Get "images/favicon.svg" }}<link rel="icon" href="{{ .RelPermalink }}" type="image/svg+xml">{{ end }}
+</head>

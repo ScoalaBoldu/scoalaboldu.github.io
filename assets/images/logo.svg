@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="56" viewBox="0 0 300 56" role="img" aria-label="Școala Gimnazială Boldu">
+  <g transform="translate(4,6)">
+    <path d="M22 0 L44 22 L22 44 L0 22 Z" fill="#b0252d"/>
+    <path d="M22 9 L35 22 L22 35 L9 22 Z" fill="#ffffff"/>
+    <path d="M22 15 L29 22 L22 29 L15 22 Z" fill="#12305f"/>
+  </g>
+  <text x="60" y="24" fill="#ffffff" font-family="Montserrat, Poppins, Arial, sans-serif" font-size="12.5" font-weight="600" letter-spacing="1.6">ȘCOALA GIMNAZIALĂ</text>
+  <text x="59" y="48" fill="#ffffff" font-family="Montserrat, Poppins, Arial, sans-serif" font-size="25" font-weight="800" letter-spacing="1">BOLDU</text>
+</svg>

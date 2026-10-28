@@ -1,0 +1,12 @@
+<div class="card p-0 border-primary rounded-0 hover-shadow h-100">
+  {{ with resources.Get .Params.image }}{{ $i := .Fill "640x400 webp q75 Center" }}<a href="{{ $.RelPermalink }}"><img class="card-img-top rounded-0" src="{{ $i.RelPermalink }}" alt="{{ $.Title }}" loading="lazy" width="640" height="400"></a>{{ end }}
+  <div class="card-body">
+    <ul class="list-inline mb-2">
+      {{ with .Params.eticheta }}<li class="list-inline-item"><i class="ti-bookmark-alt"></i> {{ . }}</li>{{ end }}
+      {{ with .Params.perioada }}<li class="list-inline-item"><i class="ti-calendar"></i> {{ . }}</li>{{ end }}
+    </ul>
+    <h4 class="card-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h4>
+    <p class="card-text mb-4">{{ .Summary | plainify | truncate 120 }}</p>
+    <a href="{{ .RelPermalink }}" class="btn btn-primary btn-sm">{{ i18n "details" }}</a>
+  </div>
+</div>

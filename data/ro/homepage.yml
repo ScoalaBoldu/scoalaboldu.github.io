@@ -1,0 +1,70 @@
+# Conținutul primei pagini. Se editează din Pages CMS → „Prima pagină”.
+slider:
+  enable: true
+  imagine: images/foto/scoala.webp
+  elemente:
+  - titlu: Bine ați venit la Școala Gimnazială Boldu
+    text: 'O școală de comunitate care pune elevul în centru: lecții moderne, proiecte europene și activități care leagă școala de familie și de sat.'
+    buton:
+      text: Despre școală
+      link: despre/
+  - titlu: Școală acreditată Erasmus+ 2021–2027
+    text: Elevii și profesorii noștri învață în școli din Turcia, Italia, Grecia și, de acum, Franța.
+    buton:
+      text: Proiectele noastre
+      link: proiecte/
+  - titlu: Avizierul școlii, mereu la zi
+    text: Anunțuri, Evaluarea Națională, documente publice și angajări, într-un singur loc.
+    buton:
+      text: Vezi avizierul
+      link: avizier/
+repere:
+  enable: true
+  imagine: images/foto/elevi-curte.webp
+  elemente:
+  - titlu: Avizier
+    icon: ti-blackboard
+    link: avizier/
+    text: Cele mai noi anunțuri pentru elevi, părinți și profesori.
+  - titlu: Documente
+    icon: ti-files
+    link: documente/
+    text: PDI, stat de funcții, Evaluarea Națională, achiziții și formulare.
+  - titlu: Proiecte europene
+    icon: ti-world
+    link: proiecte/
+    text: Erasmus+, eTwinning și proiecte cu comunitatea și parohia.
+  - titlu: Activități
+    icon: ti-camera
+    link: activitati/
+    text: 'Viața școlii, lună de lună: serbări, Săptămâna Verde, tradiții.'
+despre:
+  enable: true
+  titlu: O școală în inima comunei Boldu
+  imagine: images/foto/1-decembrie.webp
+  text: Școala Gimnazială Boldu pregătește elevi de la clasa pregătitoare până la clasa a VIII-a, într-o comună din nord-estul județului Buzău. Colaborăm strâns cu familiile elevilor, cu Parohia Boldu și cu școli partenere din țară și din Europa.
+  motto: „Nu zidurile fac o școală, ci spiritul care domnește într-însa.”
+distinctii:
+  imagini:
+  - images/foto/etwinning-school.webp
+  - images/foto/etwinning-label.webp
+  - images/foto/erasmus-logo.webp
+  text: Școală eTwinning, eticheta europeană de calitate pentru proiectul „Let’s Sing in English” și acreditare Erasmus+ în domeniul educației școlare.
+cta:
+  enable: true
+  subtitlu: Erasmus+ 2026
+  titlu: Conectează-te digital! Fii cetățean responsabil!
+  buton:
+    text: Detalii despre proiect
+    link: proiecte/erasmus/
+cifre:
+  enable: false
+  elemente:
+  - nume: Elevi
+    numar: 0
+  - nume: Cadre didactice
+    numar: 0
+  - nume: Clase
+    numar: 0
+  - nume: Proiecte europene
+    numar: 0

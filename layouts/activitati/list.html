@@ -1,0 +1,14 @@
+{{ define "main" }}
+<section class="section">
+  <div class="container">
+    {{ with .Content }}<div class="content mb-5">{{ . }}</div>{{ end }}
+    {{ $paginator := .Paginate .Pages.ByDate.Reverse }}
+    <div class="row">
+      {{ range $paginator.Pages }}
+      <div class="col-lg-4 col-sm-6 mb-5">{{ partial "post-card.html" . }}</div>
+      {{ end }}
+    </div>
+    {{ template "_internal/pagination.html" . }}
+  </div>
+</section>
+{{ end }}

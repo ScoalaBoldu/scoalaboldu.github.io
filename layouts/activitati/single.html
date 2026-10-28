@@ -1,0 +1,17 @@
+{{ define "main" }}
+<section class="section-sm">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        {{ with resources.Get .Params.image }}{{ $i := .Resize "1100x webp q80" }}<img class="img-fluid w-100 mb-4" src="{{ $i.RelPermalink }}" alt="{{ $.Title }}" width="{{ $i.Width }}" height="{{ $i.Height }}">{{ end }}
+        <ul class="list-inline mb-4">
+          <li class="list-inline-item mr-4 text-light"><span class="font-weight-bold mr-2">{{ i18n "date" }}:</span>{{ .Params.perioada | default (partial "data.html" .Date) }}</li>
+        </ul>
+        <div class="content">{{ .Content }}</div>
+        {{ partial "galerie.html" . }}
+        <p class="mt-5"><a href="{{ .Parent.RelPermalink }}"><i class="ti-angle-left"></i> Toate activitățile</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
