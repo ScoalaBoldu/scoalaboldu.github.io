@@ -69,3 +69,11 @@
 .content table { width: 100%; margin-bottom: 20px; }
 .content table td, .content table th { border: 1px solid $border-color; padding: 8px 12px; }
 .content blockquote { border-left: 3px solid $primary-color; padding-left: 16px; font-style: italic; }
+
+.skip-link { position: absolute; left: -9999px; top: 8px; z-index: 10000; background: #fff; color: $secondary-color; padding: 10px 16px; font-weight: 600; }
+.skip-link:focus { left: 8px; }
+a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid $primary-color; outline-offset: 2px; }
+
+.feature-blocks { margin-left: 0; margin-right: 0; }
+.pagination { flex-wrap: wrap; justify-content: center; }
+body { overflow-x: hidden; }

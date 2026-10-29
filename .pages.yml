@@ -187,6 +187,8 @@ content:
                   label: Erasmus+
                 - name: pnras
                   label: PNRAS
+                - name: interes
+                  label: Informații de interes public
                 - name: alte
                   label: Alte documente
           - name: data
