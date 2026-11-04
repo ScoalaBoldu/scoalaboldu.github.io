@@ -19,6 +19,11 @@ categorii:
 - id: alte
   nume: Alte documente
 documente:
+- titlu: Stat de funcții 2026
+  categorie: manageriale
+  data: '2026-11-04'
+  fisier: /fisiere/stat-functii-2026.pdf
+  link: ''
 - titlu: Tichete sociale pe suport electronic
   categorie: anunturi
   data: '2026-09-29'
