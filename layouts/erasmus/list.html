@@ -1,0 +1,56 @@
+{{ define "main" }}
+<section class="section">
+  <div class="container">
+    {{ if eq .Kind "section" }}
+      {{ with .Content }}<div class="content mb-5">{{ . }}</div>{{ end }}
+      {{ with .Params.documente }}
+      <h4 class="mt-2 mb-3">Documente</h4>
+      <ul class="list-unstyled doc-list mb-5">
+        {{ range . }}{{ $u := .fisier | default .link }}<li><a href="{{ strings.TrimPrefix "/" $u | relURL }}" target="_blank" rel="noopener">{{ .text }}</a><span class="meta"><span class="tag pdf">{{ upper (strings.TrimPrefix "." (path.Ext $u)) | default "LINK" }}</span></span></li>{{ end }}
+      </ul>
+      {{ end }}
+      <h2 class="section-title mb-4">Proiectele noastre Erasmus+</h2>
+      <div class="row">
+        {{ range .Sections.ByWeight }}
+        <div class="col-lg-4 col-sm-6 mb-5">{{ partial "course-card.html" . }}</div>
+        {{ end }}
+      </div>
+      {{ $noutati := first 6 (where .RegularPagesRecursive "Kind" "page").ByDate.Reverse }}
+      {{ with $noutati }}
+      <h2 class="section-title mb-4 mt-3">Cele mai noi activități Erasmus+</h2>
+      <div class="row">
+        {{ range . }}<div class="col-lg-4 col-sm-6 mb-5">{{ partial "post-card.html" . }}</div>{{ end }}
+      </div>
+      {{ end }}
+    {{ else }}
+      {{ with resources.Get .Params.image }}{{ $i := .Fill "1110x460 webp q80 Center" }}<img class="img-fluid w-100 mb-4" src="{{ $i.RelPermalink }}" alt="{{ $.Title }}" width="1110" height="460">{{ end }}
+      <div class="row align-items-center mb-4">
+        <div class="col-lg-8"><h2>{{ .Title }}</h2></div>
+        <div class="col-lg-4">
+          <ul class="list-inline text-lg-right mb-0">
+            {{ with .Params.cod }}<li class="list-inline-item mr-3"><i class="ti-bookmark-alt text-primary mr-1"></i>{{ . }}</li>{{ end }}
+            {{ with .Params.perioada }}<li class="list-inline-item"><i class="ti-calendar text-primary mr-1"></i>{{ . }}</li>{{ end }}
+          </ul>
+        </div>
+        <div class="col-12 mt-3"><div class="border-bottom border-primary"></div></div>
+      </div>
+      <div class="content">{{ .Content }}</div>
+      {{ with .Params.documente }}
+      <h4 class="mt-5 mb-3">Documente</h4>
+      <ul class="list-unstyled doc-list">
+        {{ range . }}{{ $u := .fisier | default .link }}<li><a href="{{ strings.TrimPrefix "/" $u | relURL }}" target="_blank" rel="noopener">{{ .text }}</a><span class="meta"><span class="tag pdf">{{ upper (strings.TrimPrefix "." (path.Ext $u)) | default "LINK" }}</span></span></li>{{ end }}
+      </ul>
+      {{ end }}
+      {{ partial "galerie.html" . }}
+      {{ with .RegularPages.ByDate.Reverse }}
+      <h3 class="mt-5 mb-4">Mobilități și activități</h3>
+      <div class="row">
+        {{ range . }}<div class="col-lg-4 col-sm-6 mb-5">{{ partial "post-card.html" . }}</div>{{ end }}
+      </div>
+      {{ end }}
+      <p class="mt-3"><a href="{{ .Parent.RelPermalink }}"><i class="ti-angle-left"></i> Toate proiectele Erasmus+</a></p>
+    {{ end }}
+    {{ partial "erasmus-ue.html" . }}
+  </div>
+</section>
+{{ end }}

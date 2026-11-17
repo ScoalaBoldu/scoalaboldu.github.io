@@ -20,6 +20,12 @@ jobs:
         with:
           hugo-version: '0.168.0'
           extended: true
+      - name: Cache imagini procesate
+        uses: actions/cache@v4
+        with:
+          path: resources/_gen
+          key: hugo-resources-${{ github.sha }}
+          restore-keys: hugo-resources-
       - id: pages
         uses: actions/configure-pages@v5
       - run: hugo --gc --minify --baseURL "${{ steps.pages.outputs.base_url }}/"

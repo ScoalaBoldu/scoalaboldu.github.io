@@ -9,6 +9,7 @@
         </ul>
         <div class="content">{{ .Content }}</div>
         {{ partial "galerie.html" . }}
+        {{ with .Params.facebook }}<p class="mt-4"><a href="{{ . }}" target="_blank" rel="noopener"><i class="ti-facebook mr-1"></i> Toate fotografiile pe Facebook</a></p>{{ end }}
         <p class="mt-5"><a href="{{ .Parent.RelPermalink }}"><i class="ti-angle-left"></i> Toate activitățile</a></p>
       </div>
     </div>

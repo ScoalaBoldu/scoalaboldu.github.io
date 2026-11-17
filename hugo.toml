@@ -103,17 +103,21 @@ name = "Activități"
 url = "activitati/"
 weight = 3
 [[menu.main]]
+name = "Erasmus+"
+url = "erasmus/"
+weight = 4
+[[menu.main]]
 name = "Proiecte"
 url = "proiecte/"
-weight = 4
+weight = 5
 [[menu.main]]
 name = "Documente"
 url = "documente/"
-weight = 5
+weight = 6
 [[menu.main]]
 name = "Contact"
 url = "contact/"
-weight = 6
+weight = 7
 
 [[menu.footer]]
 name = "Avizier"
@@ -124,6 +128,9 @@ url = "documente/"
 [[menu.footer]]
 name = "Evaluarea Națională"
 url = "documente/#evaluare"
+[[menu.footer]]
+name = "Manual pentru editori"
+url = "manual/"
 [[menu.footer]]
 name = "Facebook"
 url = "https://www.facebook.com/ScoalaBoldu"

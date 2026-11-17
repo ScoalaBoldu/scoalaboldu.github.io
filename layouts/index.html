@@ -91,6 +91,21 @@
 <section class="section-sm">
   <div class="container">
     <div class="d-flex align-items-center section-title justify-content-between">
+      <h2 class="mb-0 text-nowrap mr-3">Erasmus+</h2>
+      <div class="border-top w-100 border-primary d-none d-sm-block"></div>
+      <a href="{{ "erasmus/" | relLangURL }}" class="btn btn-sm btn-outline-primary ml-sm-3 text-nowrap">{{ i18n "see_all" }}</a>
+    </div>
+    <div class="row justify-content-center">
+      {{ with site.GetPage "/erasmus" }}{{ range first 3 .Sections.ByWeight }}
+      <div class="col-lg-4 col-sm-6 mb-5">{{ partial "course-card.html" . }}</div>
+      {{ end }}{{ end }}
+    </div>
+  </div>
+</section>
+
+<section class="section-sm">
+  <div class="container">
+    <div class="d-flex align-items-center section-title justify-content-between">
       <h2 class="mb-0 text-nowrap mr-3">Proiecte</h2>
       <div class="border-top w-100 border-primary d-none d-sm-block"></div>
       <a href="{{ "proiecte/" | relLangURL }}" class="btn btn-sm btn-outline-primary ml-sm-3 text-nowrap">{{ i18n "see_all" }}</a>

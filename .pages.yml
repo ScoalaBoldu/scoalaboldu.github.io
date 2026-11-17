@@ -84,11 +84,152 @@ content:
         options:
           media: poze
       - name: galerie
-        label: Galerie foto (mai multe fotografii)
+        label: Galerie foto (maxim 15 fotografii)
         type: image
         options:
           media: poze
           multiple: true
+      - name: facebook
+        label: Link către albumul de pe Facebook (opțional)
+        type: string
+      - name: body
+        label: Descriere
+        type: rich-text
+
+  - name: erasmus-conecteaza
+    label: Erasmus+ · Conectează-te digital (2026–2028)
+    description: Mobilități, cursuri și activități de diseminare din acest proiect Erasmus+. Nu le adăugați și la „Activități”.
+    type: collection
+    path: content/erasmus/conecteaza-te-digital
+    format: yaml-frontmatter
+    exclude: [_index.md]
+    filename: "{year}-{month}-{primary}.md"
+    view:
+      primary: title
+      fields: [title, date]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - name: title
+        label: Titlu
+        type: string
+        required: true
+      - name: date
+        label: Data (pentru ordonare)
+        type: date
+        required: true
+        options:
+          format: yyyy-MM-dd
+      - name: perioada
+        label: Perioada afișată (ex. „1–5 martie 2027”)
+        type: string
+      - name: image
+        label: Fotografia principală
+        type: image
+        options:
+          media: poze
+      - name: galerie
+        label: Galerie foto (maxim 15 fotografii)
+        type: image
+        options:
+          media: poze
+          multiple: true
+      - name: facebook
+        label: Link către albumul de pe Facebook (opțional)
+        type: string
+      - name: body
+        label: Descriere
+        type: rich-text
+
+  - name: erasmus-pasiune
+    label: Erasmus+ · Pasiune pentru mediu (2025–2026)
+    description: Mobilități, cursuri și activități de diseminare din acest proiect Erasmus+. Nu le adăugați și la „Activități”.
+    type: collection
+    path: content/erasmus/pasiune-pentru-mediu
+    format: yaml-frontmatter
+    exclude: [_index.md]
+    filename: "{year}-{month}-{primary}.md"
+    view:
+      primary: title
+      fields: [title, date]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - name: title
+        label: Titlu
+        type: string
+        required: true
+      - name: date
+        label: Data (pentru ordonare)
+        type: date
+        required: true
+        options:
+          format: yyyy-MM-dd
+      - name: perioada
+        label: Perioada afișată (ex. „1–5 martie 2027”)
+        type: string
+      - name: image
+        label: Fotografia principală
+        type: image
+        options:
+          media: poze
+      - name: galerie
+        label: Galerie foto (maxim 15 fotografii)
+        type: image
+        options:
+          media: poze
+          multiple: true
+      - name: facebook
+        label: Link către albumul de pe Facebook (opțional)
+        type: string
+      - name: body
+        label: Descriere
+        type: rich-text
+
+  - name: erasmus-acreditare
+    label: Erasmus+ · Mobilități 2023–2024
+    description: Mobilități, cursuri și activități de diseminare din acest proiect Erasmus+. Nu le adăugați și la „Activități”.
+    type: collection
+    path: content/erasmus/acreditare-2023-2024
+    format: yaml-frontmatter
+    exclude: [_index.md]
+    filename: "{year}-{month}-{primary}.md"
+    view:
+      primary: title
+      fields: [title, date]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - name: title
+        label: Titlu
+        type: string
+        required: true
+      - name: date
+        label: Data (pentru ordonare)
+        type: date
+        required: true
+        options:
+          format: yyyy-MM-dd
+      - name: perioada
+        label: Perioada afișată (ex. „1–5 martie 2027”)
+        type: string
+      - name: image
+        label: Fotografia principală
+        type: image
+        options:
+          media: poze
+      - name: galerie
+        label: Galerie foto (maxim 15 fotografii)
+        type: image
+        options:
+          media: poze
+          multiple: true
+      - name: facebook
+        label: Link către albumul de pe Facebook (opțional)
+        type: string
       - name: body
         label: Descriere
         type: rich-text

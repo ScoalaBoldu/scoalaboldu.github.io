@@ -11,8 +11,8 @@ slider:
   - titlu: Școală acreditată Erasmus+ 2021–2027
     text: Elevii și profesorii noștri învață în școli din Turcia, Italia, Grecia și, de acum, Franța.
     buton:
-      text: Proiectele noastre
-      link: proiecte/
+      text: Proiectele Erasmus+
+      link: erasmus/
   - titlu: Avizierul școlii, mereu la zi
     text: Anunțuri, Evaluarea Națională, documente publice și angajări, într-un singur loc.
     buton:
@@ -30,10 +30,10 @@ repere:
     icon: ti-files
     link: documente/
     text: PDI, stat de funcții, Evaluarea Națională, achiziții și formulare.
-  - titlu: Proiecte europene
+  - titlu: Erasmus+
     icon: ti-world
-    link: proiecte/
-    text: Erasmus+, eTwinning și proiecte cu comunitatea și parohia.
+    link: erasmus/
+    text: Mobilități europene pentru elevi și profesori.
   - titlu: Activități
     icon: ti-camera
     link: activitati/
@@ -56,7 +56,7 @@ cta:
   titlu: Conectează-te digital! Fii cetățean responsabil!
   buton:
     text: Detalii despre proiect
-    link: proiecte/erasmus/
+    link: erasmus/conecteaza-te-digital/
 cifre:
   enable: false
   elemente:
